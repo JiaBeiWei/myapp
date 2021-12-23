@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, .space, .videoWindow {
+  text-align: center;
+}
+
+button {
+  margin: 15px 20px;
+}

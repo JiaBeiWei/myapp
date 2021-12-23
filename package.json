@@ -1,0 +1,36 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "beta version",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^6.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "init": "chmod u+x ./install-project.sh && ./install-project.sh",
+    "start": "npm run start --prefix ./server",
+    "heroku-prebuild": "npm run init",
+    "heroku-postbuild": "npm run build --prefix ./client",
+    "client": "npm run client --prefix ./client",
+    "server": "npm run serve --prefix ./server",
+    "watch": "concurrently \"npm run client\" \"npm run server\" --timestamp-format \"HH:mm:ss\" --prefix \"{time} [{name}]\" --kill-others --names \"client,server\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiaBeiWei/MyApp.git"
+  },
+  "keywords": [
+    "online",
+    "consulting"
+  ],
+  "author": "Jiabei Wei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JiaBeiWei/MyApp/issues"
+  },
+  "homepage": "https://github.com/JiaBeiWei/MyApp#readme",
+  "engines": {
+    "node": "14.15.3"
+  }
+}
